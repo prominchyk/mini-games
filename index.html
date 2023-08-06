@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ua"> 
+    <meta charset="UTF-8">
+    <title>Guess Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="styles.min.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+           
+</head>
+<body>
+    <header>
+        <img src="dove.png" width="60px" height="60px"> 
+        hodgepodge
+        <div id="greeting"></div> 
+    </header>
+    <aside>
+        <p id="asideTextMenu">Розділи сайту:</p>
+        <a id="proverb" href="https://prominchyk.github.io/color-transform/" title="Color transform"> [Кольорова трансформація] </a> <br> <br>
+        <a id='tools' href="https://prominchyk.github.io/tools/" title="Tools"> [Інструменти текстові, математичні] </a>
+    </aside>
+    <nav id="menu">
+        <a href="#guessNumber" class="active" id="elem1">Гра Вгадай число</a>
+        <a href="#guessData" id="elem2">Гра Вгадай комірку</a>
+        <a href="#changeColor" id="elem4">Гра Зміна кольорів</a>
+        <a href="#gameWords" id="elem3">Гра в слова</a>
+        <a href="#gamePuzzle" id="elem6">Гра Склади пазл</a>
+        <a href="#findNumber" id="elem5">Гра Знайди число</a>
+    </nav>
+    <main>
+        <div id="guessNumber" class="tab active" data-elem="elem1">  
+            <h1>Гра Вгадай число</h1>
+            <p id="nickName" title="Клікніть, введіть своє ім`я та натисніть Enter">Авторизуватись</p>
+            <p id="counter"> 10 </p>
+            <input id="elem" autocomplete="off">
+            <p id="text"></p>
+            <p id="num"></p>
+        </div>
+        <div id="guessData" class="tab" data-elem="elem2">
+            <h1>Гра Вгадай комірку</h1>
+            <p>Спробуте за відведений час вгадати 10 комірок таблиці, які випадковим чином вибрав комп'ютер.<br>
+            <i>Клікайте по комірках, потрібні будуть виділені жовтим кольором.</i><br>
+            <i>Перед початком гри виберіть варіант розташування комірок в полі нижче.</i></p>
+            <select>
+                <option value="one" selected>Варіанти гри:</option>
+                <option value="two">Можуть бути розташовані будь-яким чином</option>
+                <option value="three">Не можуть бути розташовані поруч по горизонталі</option>
+                <option value="four">Не можуть бути розташовані поруч по горизонталі та вертикалі</option>
+            </select>
+            <button id = 'startGameGuessData'>Почати</button>
+            <button id = 'startGameGuessData2'>Почати</button>
+            <button id = 'startGameGuessData3'>Почати</button>
+            <span id="timer">Таймер</span>
+            <img id="sadSmile" src="sadSmile.png">
+            <img id="happySmile" src="happySmile.png">
+    
+            <table>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+
+            </table>
+        </div>
+
+        <div id="changeColor" class="tab" data-elem="elem4">
+            <h1>Гра Зміна кольорів</h1>
+            <p>Клікаючи по комірці, її колір змінюватиметься в послідовності 'червоний-зелений-синій'.<br>
+            Спробуйте за мінімальну кількість кліків зробити так, щоб поле стало одного кольору.</p>
+            <p id="clickCounter">Кількість зроблених кліків: <span>0</span></p>
+            <p id="minClickCounter">Мінімально-можлива кількість кліків була: <span></span></p>
+            <table id="fieldChangeColor"></table> 
+
+        </div>
+
+        <div id="findNumber" class="tab" data-elem="elem5">
+            <h1>Гра Знайди число</h1>
+            <button class="myStart">Нова гра</button>
+            <button class="myMusic">Музика увім.</button>
+            <audio id="myAudio" src="betkhoven-lunnaja-sonata.mp3"></audio>
+            <div class="nextGameNumber"> </div>
+            <section>
+            <button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button>
+            <button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button>
+            <button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button>
+            <button></button><button></button><button></button><button></button>
+            </section>
+        </div>
+
+        <div id="gamePuzzle" class="tab active" data-elem="elem6">  
+            <h1>Гра Склади пазл</h1>
+            <p>Переміщайте частини пазла, поки кожна частина не стане на своє місце.</p>
+            <div id="puzzle"></div>
+        </div>
+
+
+        <div id="gameWords" class="tab" data-elem="elem3">
+            <h1>Гра в слова</h1>
+            <p>Гра проти комп'ютера на знання українських міст.<br>
+                Потрібно називати місто, яке починається на останню літеру попередньо названого міста. <br>
+                Якщо Ви не можете згадати місто на потрібну літеру - через деякий час з'явиться підказка.<br></p>
+            <input id="field" autocomplete="off">
+            <div id="message"></div>
+            <div id="usedCities">Названі міста: </div>
+            <button id="showAnswers">Показати можливі варіанти міст</button><br>
+            <div id="variantsAnswers">
+            <span></span>
+            <p><i>Про ці та інші українські міста Ви можете дізнатися більше <a href="https://uk.wikipedia.org/wiki/%D0%9C%D1%96%D1%81%D1%82%D0%B0_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8_(%D0%B7%D0%B0_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D1%96%D1%82%D0%BE%D0%BC)" target="_blank">за посиланням</a></i></p>
+        </div>
+        
+
+
+        </div>
+    </main>
+
+    <script src="script.min.js"></script>
+
+</body>
+
+
+</html>
